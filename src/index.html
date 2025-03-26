@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <link href="./output.css" rel="stylesheet">
+    <title>Navigation</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <script>
+        function switchSection(sectionId) {
+            document.querySelectorAll('.main-section').forEach(section => {
+                section.classList.add('hidden');
+                section.classList.remove('visible');
+            });
+            const section = document.getElementById(sectionId);
+            setTimeout(() => section.classList.add('visible'), 100);
+            section.classList.remove('hidden');
+        }
+    </script>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+        .wrapper {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 65vw;
+            height: 100%;
+        }
+        .container {
+            width: 50%;
+            background-color: white;
+            padding: 20px;
+            height: 100%;
+            min-height:100vh;
+        }
+    </style>
+</head>
+<body class="flex justify-center items-center h-full bg-gray-950">
+<div class="wrapper">
+    <div class="container text-center">
+        <div class="main-section">
+            <div><img src="images/img1.PNG" alt=""></div>
+            <div class="p-4 bg-zinc-300 rounded-lg mt-4 mb-4 text-lg">Le joueur star déboule sur le côté du terrain et prend de vitesse tout le monde.</div>
+            <p class="p-4 bg-zinc-300 rounded-lg mt-4 mb-4 text-lg">Le joueur star accelere sur le cote du terrain</p>
+            <p class="p-4 bg-zinc-300 rounded-lg mt-4 mb-4 text-lg">il percute en fan en tribune. Choc</p>
+            <div class="bg-zinc-300 rounded-lg mt-4 mb-4 text-lg flex items-center flex-col">
+                <div>
+                    <h1 class="pb-4">Quel personne veux-tu suivre ?</h1>
+                    <button onclick="switchSection('chemin_1_1')" class="px-6 py-3 rounded-lg bg-blue-500 hover:bg-blue-600 text-white font-semibold shadow-md transition-all duration-200 active:scale-95">Le fan</button>
+                    <button onclick="switchSection('chemin_1_2')" class="px-6 py-3 rounded-lg bg-blue-500 hover:bg-blue-600 text-white font-semibold shadow-md transition-all duration-200 active:scale-95">Le footballeur</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Chemin du fan -->
+        <div id="chemin_1_1" class="main-section hidden mt-8">
+            <p class="p-4 bg-zinc-300 rounded-lg mt-4 mb-4 text-lg">Il se réveille dans une villa. Il se regarde dans le miroir et est choqué.</p>
+            <p class="p-4 bg-zinc-300 rounded-lg mt-4 mb-4 text-lg">Il doit aller à l’entraînement.</p>
+            <div class="bg-zinc-300 rounded-lg mt-4 mb-4 text-lg flex items-center flex-col">
+                <div>
+            <p>Lorsqu’il sort de l’entraînement, des paparazzis l’abordent et il est submergé par les médias.</p>
+                <button onclick="switchSection('chemin_1_1_3')" class="px-6 py-3 rounded-lg bg-blue-500 hover:bg-blue-600 text-white font-semibold shadow-md transition-all duration-200 active:scale-95">Répondre</button>
+                <button onclick="switchSection('chemin_1_1_2')" class="px-6 py-3 rounded-lg bg-blue-500 hover:bg-blue-600 text-white font-semibold shadow-md transition-all duration-200 active:scale-95">Ignorer</button>
+                </div>
+            </div>
+        </div>
+
+        <div id="chemin_1_1_3" class="main-section hidden mt-8">
+            <p class="p-4 bg-zinc-300 rounded-lg mt-4 mb-4 text-lg">Malgré le changement de corps, le fan se sent confiant dans la peau de l’athlète.</p>
+            <p class="p-4 bg-zinc-300 rounded-lg mt-4 mb-4 text-lg">Il fait un match catastrophique. Il coûte la victoire à son équipe.</p>
+            <p class="p-4 bg-zinc-300 rounded-lg mt-4 mb-4 text-lg">Déterminé il travail dur</p>
+            <p class="p-4 bg-zinc-300 rounded-lg mt-4 mb-4 text-lg">Match France - Italie. Une ambiance électrique.</p>
+            <p class="p-4 bg-zinc-300 rounded-lg mt-4 mb-4 text-lg">Ils se regardent dans le tunnel des vestiaires… Un doute…</p>
+            <p class="p-4 bg-zinc-300 rounded-lg mt-4 mb-4 text-lg">Match tres serre le ballon est e,tre les deux joueurs choc !</p>
+            <p class="p-4 bg-zinc-300 rounded-lg mt-4 mb-4 text-lg">Choc entre les deux joueurs.</p>
+            <p class="p-4 bg-zinc-300 rounded-lg mt-4 mb-4 text-lg">Ils se relèvent… De retour dans leur corps.</p>
+        </div>
+
+        <div id="chemin_1_1_2" class="main-section hidden mt-8">
+            <p class="p-4 bg-zinc-300 rounded-lg mt-4 mb-4 text-lg">Il ne supporte pas la pression </p>
+            <div>
+                <div>
+                    <p class="p-4 bg-zinc-300 rounded-lg mt-4 mb-4 text-lg">Sortir en boite ?
+                        <button onclick="switchSection('chemin_1_1_5')" class="px-6 py-3 rounded-lg bg-blue-500 hover:bg-blue-600 text-white font-semibold shadow-md transition-all duration-200 active:scale-95">Oui</button>
+                        <button onclick="switchSection('chemin_1_1_3')" class="px-6 py-3 rounded-lg bg-blue-500 hover:bg-blue-600 text-white font-semibold shadow-md transition-all duration-200 active:scale-95">Non</button>
+                    </p>
+               </div>
+            </div>
+        </div>
+
+        <div id="chemin_1_1_5" class="main-section hidden mt-8">
+            <p class="p-4 bg-zinc-300 rounded-lg mt-4 mb-4 text-lg">Il fait n’importe quoi, ne s’entraîne pas, sort tard le soir.</p>
+            <p class="p-4 bg-zinc-300 rounded-lg mt-4 mb-4 text-lg">Match France - Italie. Une ambiance électrique.</p>
+            <p class="p-4 bg-zinc-300 rounded-lg mt-4 mb-4 text-lg">Ils se regardent dans un tunnel des vestiaires. un doute </p>
+            <p class="p-4 bg-zinc-300 rounded-lg mt-4 mb-4 text-lg">Le fan dans la peau de l’athlète perd le match. il a été catastrophique</p>
+            <p class="p-4 bg-zinc-300 rounded-lg mt-4 mb-4 text-lg">L’athlète dans la peau du fan devient une star mondiale.</p>
+        </div>
+
+
+
+        <!-- Chemin du footballeur -->
+        <div id="chemin_1_2" class="main-section hidden mt-8">
+            <p class="p-4 bg-zinc-300 rounded-lg mt-4 mb-4 text-lg">Il se réveille dans une petite chambre. Il se regarde dans le miroir et crie.</p>
+            <p class="p-4 bg-zinc-300 rounded-lg mt-4 mb-4 text-lg">Il doit aller à l’entraînement.</p>
+            <p class="p-4 bg-zinc-300 rounded-lg mt-4 mb-4 text-lg">Il impressionne tout le monde par son talent.</p>
+            <p class="p-4 bg-zinc-300 rounded-lg mt-4 mb-4 text-lg">Il grimpe les échelons mais se rend compte de la difficulté.</p>
+            <div>
+                <div>
+                    <p class="bg-zinc-300 rounded-lg mt-4 mb-4 text-lg flex items-center flex-col">Il rencontre également des difficultés au niveau social, il ne s’entend pas avec sa famille, elle est de classe moyenne.
+                        <button onclick="switchSection('chemin_1_2_2')" class="px-6 py-3 rounded-lg bg-blue-500 hover:bg-blue-600 text-white font-semibold shadow-md transition-all duration-200 active:scale-95">Quitter sa famille</button>
+                        <button onclick="switchSection('chemin_1_2_3')" class="px-6 py-3 rounded-lg bg-blue-500 hover:bg-blue-600 text-white font-semibold shadow-md transition-all duration-200 active:scale-95">Rester avec eux</button>
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div id="chemin_1_2_3" class="main-section hidden mt-8">
+            <p class="p-4 bg-zinc-300 rounded-lg mt-4 mb-4 text-lg">Il décide d’essayer de s’entendre avec eux. Leur support l’aide à surmonter les épreuves. Il devient plus fort et est sélectionné en équipe nationale</p>
+            <p class="p-4 bg-zinc-300 rounded-lg mt-4 mb-4 text-lg">Match France - Italie. Une ambiance électrique.</p>
+            <p class="p-4 bg-zinc-300 rounded-lg mt-4 mb-4 text-lg">Ils se regardent dans le tunnel des vestiaires… Un doute…</p>
+            <div>
+                <div>
+                    <p class="bg-zinc-300 rounded-lg mt-4 mb-4 text-lg flex items-center flex-col">Match très serré. Le pro dans la peau fan  a la balle.
+                        <button onclick="switchSection('chemin_1_2_7')" class="px-6 py-3 rounded-lg bg-blue-500 hover:bg-blue-600 text-white font-semibold shadow-md transition-all duration-200 active:scale-95">dribbler comme il savait faire</button>
+                        <button onclick="switchSection('chemin_1_2_8')" class="px-6 py-3 rounded-lg bg-blue-500 hover:bg-blue-600 text-white font-semibold shadow-md transition-all duration-200 active:scale-95">faire la passe</button>
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div id="chemin_1_2_7" class="main-section hidden mt-8">
+            <p class="p-4 bg-zinc-300 rounded-lg mt-4 mb-4 text-lg">choc entre les deux</p>
+            <p class="p-4 bg-zinc-300 rounded-lg mt-4 mb-4 text-lg">il se relève... De retour dans son corps.</p>
+        </div>
+        <div id="chemin_1_2_8" class="main-section hidden mt-8">
+            <p class="p-4 bg-zinc-300 rounded-lg mt-4 mb-4 text-lg">Ils ne réechangent pas de corps au final et restent rivaux</p>
+            <p class="p-4 bg-zinc-300 rounded-lg mt-4 mb-4 text-lg">Cette expérience leur permet de se challenger mutuellement tout au long de leur carrière et de se tirer mutuellement vers le haut en s’affrontant continuellement au sommet.</p>
+        </div>
+
+        <div id="chemin_1_2_2" class="main-section hidden mt-8">
+            <p class="p-4 bg-zinc-300 rounded-lg mt-4 mb-4 text-lg">il decide de partir seul</p>
+            <div class="bg-zinc-300 rounded-lg mt-4 mb-4 text-lg flex items-center flex-col">
+                <div>
+                    <p>Il comprends qu’il n’a pas les memes moyens que dans son autre corps. Il perd de sa magie et commence a douter.
+                        <button onclick="switchSection('chemin_1_2_3')" class="px-6 py-3  rounded-lg bg-blue-500 hover:bg-blue-600 text-white font-semibold shadow-md transition-all duration-200 active:scale-95">renouer avec sa famille</button>
+                        <button onclick="switchSection('chemin_1_2_5')" class="px-6 py-3  rounded-lg bg-blue-500 hover:bg-blue-600 text-white font-semibold shadow-md transition-all duration-200 active:scale-95">travailler encore plus dur</button>
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div id="chemin_1_2_5" class="main-section hidden mt-8">
+            <p class="p-4 bg-zinc-300 rounded-lg mt-4 mb-4 text-lg">Malgré son travail acharné il n'est pas seléctionné en equipe national</p>
+            <p class="p-4 bg-zinc-300 rounded-lg mt-4 mb-4 text-lg" >Il échoué dans sa carrière, enchaine les blessures. Il arrete le football et a fini à la rue.</p>
+        </div>
+    </div>
+</div>
+</body>
+</html>
