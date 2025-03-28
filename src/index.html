@@ -69,13 +69,21 @@
         <div id="chemin_1_1" class="main-section hidden mt-8">
             <p class="p-4 bg-zinc-800/80 text-white rounded-lg mt-4 mb-4 text-lg">Il se réveille dans une villa. Il se regarde dans le miroir et est choqué.</p>
             <p class="p-4 bg-zinc-800/80 text-white rounded-lg mt-4 mb-4 text-lg">Il doit aller à l’entraînement.</p>
-            <div class="bg-zinc-800/80 text-white rounded-lg mt-4 mb-4 text-lg flex items-center flex-col">
-                <div>
-            <p>Lorsqu’il sort de l’entraînement, des paparazzis l’abordent et il est submergé par les médias.</p>
-                <button onclick="switchSection('chemin_1_1_3')" class="px-6 py-3 rounded-lg text-black  hover:bg-yellow-200 font-semibold transition-all duration-200 active:scale-95">Répondre</button>
-                <button onclick="switchSection('chemin_1_1_2')" class="px-6 py-3 rounded-lg text-black  hover:bg-yellow-200 font-semibold transition-all duration-200 active:scale-95">Ignorer</button>
+                <div class="bg-zinc-900/80 border border-zinc-600 rounded-lg mt-6 mb-6 p-6 text-lg flex flex-col items-center shadow-xl backdrop-blur-lg">
+                    <h1 class="pb-4 text-xl font-bold text-gray-100 tracking-wide uppercase">Que veux-tu faire ?</h1>
+                    <div class="flex gap-4">
+                        <button onclick="switchSection('chemin_1_1_3')"
+                                class="px-8 py-3 rounded-lg bg-gradient-to-b from-gray-700 to-gray-800 text-white font-semibold text-lg shadow-lg
+                   hover:from-gray-600 hover:to-gray-700/90 transition-all duration-300 active:scale-95 border border-gray-800">
+                            Répondre
+                        </button>
+                        <button onclick="switchSection('chemin_1_1_2')"
+                                class="px-8 py-3 rounded-lg bg-gradient-to-b from-gray-700 to-gray-800 text-white font-semibold text-lg shadow-lg
+                   hover:from-gray-600 hover:to-gray-700/90 transition-all duration-300 active:scale-95 border border-gray-800">
+                            Ignorer
+                        </button>
+                    </div>
                 </div>
-            </div>
         </div>
 
         <div id="chemin_1_1_3" class="main-section hidden mt-8">
@@ -95,13 +103,21 @@
 
         <div id="chemin_1_1_2" class="main-section hidden mt-8">
             <p class="p-4 bg-zinc-800/80 text-white rounded-lg mt-4 mb-4 text-lg">Il ne supporte pas la pression </p>
-            <div>
-                <div>
-                    <p class="p-4 bg-zinc-800/80 text-white rounded-lg mt-4 mb-4 text-lg">Sortir en boite ?
-                        <button onclick="switchSection('chemin_1_1_5')" class="px-6 py-3 rounded-lg text-black  hover:bg-yellow-200 font-semibold transition-all duration-200 active:scale-95">Oui</button>
-                        <button onclick="switchSection('chemin_1_1_3')" class="px-6 py-3 rounded-lg text-black  hover:bg-yellow-200 font-semibold transition-all duration-200 active:scale-95">Non</button>
-                    </p>
-               </div>
+
+            <div class="bg-zinc-900/80 border border-zinc-600 rounded-lg mt-6 mb-6 p-6 text-lg flex flex-col items-center shadow-xl backdrop-blur-lg">
+                <h1 class="pb-4 text-xl font-bold text-gray-100 tracking-wide uppercase">Est-ce la bonne décision ?</h1>
+                <div class="flex gap-4">
+                    <button onclick="switchSection('chemin_1_1_5')"
+                            class="px-8 py-3 rounded-lg bg-gradient-to-b from-gray-700 to-gray-800 text-white font-semibold text-lg shadow-lg
+                   hover:from-gray-600 hover:to-gray-700/90 transition-all duration-300 active:scale-95 border border-gray-800">
+                        Oui
+                    </button>
+                    <button onclick="switchSection('chemin_1_1_3')"
+                            class="px-8 py-3 rounded-lg bg-gradient-to-b from-gray-700 to-gray-800 text-white font-semibold text-lg shadow-lg
+                   hover:from-gray-600 hover:to-gray-700/90 transition-all duration-300 active:scale-95 border border-gray-800">
+                        Non
+                    </button>
+                </div>
             </div>
         </div>
 
@@ -115,7 +131,11 @@
                 <img class="-rotate-45 w-[72%] ml-[123px]" src="images/img4.jpg" alt="">
                 <p class="p-4 bg-zinc-800/80 text-white rounded-lg mt-4 mb-4 text-lg">Ils se regardent dans le tunnel des vestiaires… Un doute…</p>
             </div>
-            <p class="p-4 bg-zinc-800/80 text-white rounded-lg mt-4 mb-4 text-lg">Le fan dans la peau de l’athlète perd le match. il a été catastrophique</p>
+            <div>
+                <img class="-rotate-45 w-[72%] ml-[123px]" src="images/img6.jpg" alt="">
+                <p class="p-4 bg-zinc-800/80 text-white rounded-lg mt-4 mb-4 text-lg">Le fan dans la peau de l’athlète perd le match. il a été catastrophique</p>
+            </div>
+
             <p class="p-4 bg-zinc-800/80 text-white rounded-lg mt-4 mb-4 text-lg">L’athlète dans la peau du fan devient une star mondiale.</p>
         </div>
 
@@ -127,12 +147,19 @@
             <p class="p-4 bg-zinc-800/80 text-white rounded-lg mt-4 mb-4 text-lg">Il doit aller à l’entraînement.</p>
             <p class="p-4 bg-zinc-800/80 text-white rounded-lg mt-4 mb-4 text-lg">Il impressionne tout le monde par son talent.</p>
             <p class="p-4 bg-zinc-800/80 text-white rounded-lg mt-4 mb-4 text-lg">Il grimpe les échelons mais se rend compte de la difficulté.</p>
-            <div>
-                <div>
-                    <p class="bg-zinc-200 rounded-lg mt-4 mb-4 text-lg flex items-center flex-col">Il rencontre également des difficultés au niveau social, il ne s’entend pas avec sa famille, elle est de classe moyenne.
-                        <button onclick="switchSection('chemin_1_2_2')" class="px-6 py-3 rounded-lg text-black  hover:bg-yellow-200 font-semibold transition-all duration-200 active:scale-95">Quitter sa famille</button>
-                        <button onclick="switchSection('chemin_1_2_3')" class="px-6 py-3 rounded-lg text-black  hover:bg-yellow-200 font-semibold transition-all duration-200 active:scale-95">Rester avec eux</button>
-                    </p>
+            <div class="bg-zinc-900/80 border border-zinc-600 rounded-lg mt-6 mb-6 p-6 text-lg flex flex-col items-center shadow-xl backdrop-blur-lg">
+                <h1 class="pb-4 text-xl font-bold text-gray-100 tracking-wide uppercase">Doit-il quitter sa famille ?</h1>
+                <div class="flex gap-4">
+                    <button onclick="switchSection('chemin_1_2_2')"
+                            class="px-8 py-3 rounded-lg bg-gradient-to-b from-gray-700 to-gray-800 text-white font-semibold text-lg shadow-lg
+                   hover:from-gray-600 hover:to-gray-700/90 transition-all duration-300 active:scale-95 border border-gray-800">
+                        Quitter sa famille
+                    </button>
+                    <button onclick="switchSection('chemin_1_2_3')"
+                            class="px-8 py-3 rounded-lg bg-gradient-to-b from-gray-700 to-gray-800 text-white font-semibold text-lg shadow-lg
+                   hover:from-gray-600 hover:to-gray-700/90 transition-all duration-300 active:scale-95 border border-gray-800">
+                        Rester avec eux
+                    </button>
                 </div>
             </div>
         </div>
@@ -144,12 +171,19 @@
                 <img class="-rotate-45 w-[72%] ml-[123px]" src="images/img4.jpg" alt="">
                 <p class="p-4 bg-zinc-800/80 text-white rounded-lg mt-4 mb-4 text-lg">Ils se regardent dans le tunnel des vestiaires… Un doute…</p>
             </div>
-            <div>
-                <div>
-                    <p class="bg-zinc-800/80 text-white rounded-lg mt-4 mb-4 text-lg flex items-center flex-col">Match très serré. Le pro dans la peau fan  a la balle.
-                        <button onclick="switchSection('chemin_1_2_7')" class="px-6 py-3 rounded-lg text-black  hover:bg-yellow-200 font-semibold transition-all duration-200 active:scale-95">dribbler comme il savait faire</button>
-                        <button onclick="switchSection('chemin_1_2_8')" class="px-6 py-3 rounded-lg text-black  hover:bg-yellow-200 font-semibold transition-all duration-200 active:scale-95">faire la passe</button>
-                    </p>
+            <div class="bg-zinc-900/80 border border-zinc-600 rounded-lg mt-6 mb-6 p-6 text-lg flex flex-col items-center shadow-xl backdrop-blur-lg">
+                <h1 class="pb-4 text-xl font-bold text-gray-100 tracking-wide uppercase">Que doit-il faire sur le terrain ?</h1>
+                <div class="flex gap-4">
+                    <button onclick="switchSection('chemin_1_2_7')"
+                            class="px-8 py-3 rounded-lg bg-gradient-to-b from-gray-700 to-gray-800 text-white font-semibold text-lg shadow-lg
+                   hover:from-gray-600 hover:to-gray-700/90 transition-all duration-300 active:scale-95 border border-gray-800">
+                        Dribbler comme il savait faire
+                    </button>
+                    <button onclick="switchSection('chemin_1_2_8')"
+                            class="px-8 py-3 rounded-lg bg-gradient-to-b from-gray-700 to-gray-800 text-white font-semibold text-lg shadow-lg
+                   hover:from-gray-600 hover:to-gray-700/90 transition-all duration-300 active:scale-95 border border-gray-800">
+                        Faire la passe
+                    </button>
                 </div>
             </div>
         </div>
@@ -171,14 +205,20 @@
                 <img class=" w-[100%] " src="images/img5.jpg" alt="">
                 <p class="p-4 bg-zinc-800/80 text-white rounded-lg mt-4 mb-4 text-lg">il decide de partir seul</p>
             </div>
-            <div class=" mt-4 mb-4 text-lg flex items-center flex-col">
-            <div>
-                <img class="-rotate-45 w-[72%] ml-[123px]" src="images/img.jpg" alt="">
-                <p class="p-4 bg-zinc-800/80 text-white rounded-lg mt-4 mb-4 text-lg">Il comprends qu’il n’a pas les memes moyens que dans son autre corps. Il perd de sa magie et commence a douter.
-                        <button onclick="switchSection('chemin_1_2_3')" class="px-4 py-2 rounded-lg text-black  hover:bg-yellow-200 font-semibold transition-all duration-200 active:scale-95">renouer avec sa famille</button>
-                        <button onclick="switchSection('chemin_1_2_5')" class="px-4 py-2 rounded-lg text-black  hover:bg-yellow-200 font-semibold transition-all duration-200 active:scale-95">travailler encore plus dur</button>
-                </p>
-            </div>
+            <div class="bg-zinc-900/80 border border-zinc-600 rounded-lg mt-6 mb-6 p-6 text-lg flex flex-col items-center shadow-xl backdrop-blur-lg">
+                <h1 class="pb-4 text-xl font-bold text-gray-100 tracking-wide uppercase">Quelle voie choisira-t-il ?</h1>
+                <div class="flex gap-4">
+                    <button onclick="switchSection('chemin_1_2_3')"
+                            class="px-8 py-3 rounded-lg bg-gradient-to-b from-gray-700 to-gray-800 text-white font-semibold text-lg shadow-lg
+                   hover:from-gray-600 hover:to-gray-700/90 transition-all duration-300 active:scale-95 border border-gray-800">
+                        Renouer avec sa famille
+                    </button>
+                    <button onclick="switchSection('chemin_1_2_5')"
+                            class="px-8 py-3 rounded-lg bg-gradient-to-b from-gray-700 to-gray-800 text-white font-semibold text-lg shadow-lg
+                   hover:from-gray-600 hover:to-gray-700/90 transition-all duration-300 active:scale-95 border border-gray-800">
+                        Travailler encore plus dur
+                    </button>
+                </div>
             </div>
         </div>
 
