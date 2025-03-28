@@ -113,14 +113,44 @@
 .container\! {
   width: 100% !important;
 }
+.mx-auto {
+  margin-inline: auto;
+}
 .my-auto {
   margin-block: auto;
+}
+.-mt-\[100px\] {
+  margin-top: calc(100px * -1);
+}
+.mt-\[-125px\] {
+  margin-top: -125px;
+}
+.mt-\[-130px\] {
+  margin-top: -130px;
+}
+.mt-\[-155px\] {
+  margin-top: -155px;
+}
+.mt-\[-172px\] {
+  margin-top: -172px;
 }
 .mt-auto {
   margin-top: auto;
 }
+.mb-\[123px\] {
+  margin-bottom: 123px;
+}
 .mb-auto {
   margin-bottom: auto;
+}
+.ml-\[110px\] {
+  margin-left: 110px;
+}
+.ml-\[120px\] {
+  margin-left: 120px;
+}
+.ml-\[123px\] {
+  margin-left: 123px;
 }
 .box-border {
   box-sizing: border-box;
@@ -200,6 +230,33 @@
 .h-full {
   height: 100%;
 }
+.min-h-screen {
+  min-height: 100vh;
+}
+.w-1\/2 {
+  width: calc(1/2 * 100%);
+}
+.w-4\/5 {
+  width: calc(4/5 * 100%);
+}
+.w-\[70\%\] {
+  width: 70%;
+}
+.w-\[72\%\] {
+  width: 72%;
+}
+.w-\[73\%\] {
+  width: 73%;
+}
+.w-\[80\%\] {
+  width: 80%;
+}
+.w-\[85\%\] {
+  width: 85%;
+}
+.w-\[100\%\] {
+  width: 100%;
+}
 .max-w-none {
   max-width: none;
 }
@@ -232,6 +289,18 @@
 }
 .border-separate {
   border-collapse: separate;
+}
+.-rotate-45 {
+  rotate: calc(45deg * -1);
+}
+.rotate-45 {
+  rotate: 45deg;
+}
+.rotate-90 {
+  rotate: 90deg;
+}
+.rotate-180 {
+  rotate: 180deg;
 }
 .transform {
   transform: var(--tw-rotate-x) var(--tw-rotate-y) var(--tw-rotate-z) var(--tw-skew-x) var(--tw-skew-y);
@@ -760,9 +829,16 @@
 .scroll-smooth {
   scroll-behavior: smooth;
 }
+.rounded-full {
+  border-radius: calc(infinity * 1px);
+}
 .border {
   border-style: var(--tw-border-style);
   border-width: 1px;
+}
+.border-2 {
+  border-style: var(--tw-border-style);
+  border-width: 2px;
 }
 .border-x {
   border-inline-style: var(--tw-border-style);
@@ -822,6 +898,14 @@
 }
 .bg-\[rgb\(255\,0\,0\)\] {
   background-color: rgb(255,0,0);
+}
+.bg-gradient-to-b {
+  --tw-gradient-position: to bottom in oklab;
+  background-image: linear-gradient(var(--tw-gradient-stops));
+}
+.bg-gradient-to-r {
+  --tw-gradient-position: to right in oklab;
+  background-image: linear-gradient(var(--tw-gradient-stops));
 }
 .bg-none {
   background-image: none;
@@ -1309,6 +1393,10 @@
   --tw-duration: 200ms;
   transition-duration: 200ms;
 }
+.duration-300 {
+  --tw-duration: 300ms;
+  transition-duration: 300ms;
+}
 .contain-inline-size {
   --tw-contain-size: inline-size;
   contain: var(--tw-contain-size,) var(--tw-contain-layout,) var(--tw-contain-paint,) var(--tw-contain-style,);
@@ -1387,6 +1475,16 @@
 }
 .ring-inset {
   --tw-ring-inset: inset;
+}
+.hover\:scale-105 {
+  &:hover {
+    @media (hover: hover) {
+      --tw-scale-x: 105%;
+      --tw-scale-y: 105%;
+      --tw-scale-z: 105%;
+      scale: var(--tw-scale-x) var(--tw-scale-y);
+    }
+  }
 }
 .before\:hover\:text-center {
   &::before {
