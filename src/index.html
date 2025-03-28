@@ -7,22 +7,6 @@
     <script src="https://cdn.tailwindcss.com"></script>
 
     <script>
-        function switchSection(sectionId) {
-            document.querySelectorAll('.main-section').forEach(section => {
-                section.classList.add('hidden');
-                section.classList.remove('visible');
-            });
-
-            const section = document.getElementById(sectionId);
-
-            setTimeout(() => {
-                section.classList.add('visible');
-                section.scrollIntoView({ behavior: 'smooth', block: 'start' });
-            }, 100);
-
-            section.classList.remove('hidden');
-        }
-
         const sectionAudioMap = {
         "chemin_0": "sounds/chemin_0.mp3",
         "chemin_1_1": "sounds/chemin_1_1.mp3",
