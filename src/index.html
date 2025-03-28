@@ -23,6 +23,46 @@
             section.classList.remove('hidden');
         }
 
+        const sectionAudioMap = {
+        "chemin_0": "sounds/chemin_0.mp3",
+        "chemin_1_1": "sounds/chemin_1_1.mp3",
+        "chemin_1_2": "sounds/chemin_1_1.mp3",
+        "chemin_1_1_2": "sounds/chemin_triste.mp3",
+        "chemin_1_1_3": "sounds/chemin_0.mp3",
+        "chemin_1_2_3": "sounds/chemin_0.mp3",
+        "chemin_1_2_2": "sounds/chemin_triste.mp3",
+        "chemin_1_2_5": "sounds/chemin_triste.mp3",
+        "chemin_1_1_5": "sounds/chemin_triste.mp3",
+        "chemin_1_2_8": "sounds/chemin_fin_heureuse.mp3",
+        "chemin_1_2_7": "sounds/chemin_fin_heureuse.mp3",
+
+        // Ajoutez les autres chemins et leurs sons
+    };
+
+    function switchSection(sectionId) {
+        document.querySelectorAll('.main-section').forEach(section => {
+            section.classList.add('hidden');
+            section.classList.remove('visible');
+        });
+
+        const section = document.getElementById(sectionId);
+        setTimeout(() => section.classList.add('visible'), 100);
+        section.classList.remove('hidden');
+
+        // Changer la musique
+        changeBackgroundMusic(sectionId);
+    }
+
+    function changeBackgroundMusic(sectionId) {
+        const audioElement = document.getElementById("background-audio");
+        if (sectionAudioMap[sectionId]) {
+            audioElement.src = sectionAudioMap[sectionId];
+            audioElement.play();
+        } else {
+            audioElement.pause();
+        }
+    }
+
     </script>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Boldonse&display=swap');
@@ -48,6 +88,9 @@
     </style>
 </head>
 <body class="flex justify-center items-center h-full bg-gray-950">
+
+    <audio id="background-audio" loop></audio>
+
 <div class="wrapper">
     <div class="container text-center bg-gray-900">
         <div class="main-section" id="chemin_10">
@@ -255,7 +298,7 @@
         </div>
 
         <div id="chemin_1_2_7" class="main-section hidden mt-8">
-            <p class="p-4 bg-zinc-800/80 text-white rounded-lg mt-4 mb-4 text-lg font-semibold">choc entre les deux</p>
+            <p class="p-4 bg-zinc-800/80 text-white rounded-lg mt-4 mb-4 text-lg font-semibold">Choc entre les deux</p>
             <p class="p-4 bg-zinc-800/80 text-white rounded-lg mt-4 mb-4 text-lg font-semibold">Il se relève... De retour dans son corps.</p>
         </div>
         <div id="chemin_1_2_8" class="main-section hidden mt-8">
@@ -268,7 +311,7 @@
 
         <div id="chemin_1_2_2" class="main-section hidden mt-8">
             <div>
-                <p class="relative top-24 p-4 bg-zinc-800/80 text-white rounded-lg mt-4 mb-4 text-lg font-semibold">il decide de partir seul</p>
+                <p class="relative top-24 p-4 bg-zinc-800/80 text-white rounded-lg mt-4 mb-4 text-lg font-semibold">Il décide de partir seul</p>
                 <img class=" w-[100%] " src="images/img5.jpg" alt="">
                 </div>
             <div class="bg-zinc-900/80 border border-zinc-600 rounded-lg mt-6 mb-6 p-6 text-lg flex flex-col items-center shadow-xl backdrop-blur-lg">
