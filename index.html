@@ -2,7 +2,7 @@
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <link href="output.css" rel="stylesheet">
+    <link href="src/output.css" rel="stylesheet">
     <title>SAE 402 - BD</title>
     <script src="https://cdn.tailwindcss.com"></script>
 
@@ -20,22 +20,24 @@
         "chemin_1_2_8": "sounds/chemin_fin_heureuse.mp3",
         "chemin_1_2_7": "sounds/chemin_fin_heureuse.mp3",
 
-        // Ajoutez les autres chemins et leurs sons
     };
 
-    function switchSection(sectionId) {
-        document.querySelectorAll('.main-section').forEach(section => {
-            section.classList.add('hidden');
-            section.classList.remove('visible');
-        });
+        function switchSection(sectionId) {
+            document.querySelectorAll('.main-section').forEach(section => {
+                section.classList.add('hidden');
+                section.classList.remove('visible');
+            });
 
-        const section = document.getElementById(sectionId);
-        setTimeout(() => section.classList.add('visible'), 100);
-        section.classList.remove('hidden');
+            const section = document.getElementById(sectionId);
+            setTimeout(() => section.classList.add('visible'), 100);
+            section.classList.remove('hidden');
 
-        // Changer la musique
-        changeBackgroundMusic(sectionId);
-    }
+            changeBackgroundMusic(sectionId);
+
+            // Remonter en haut de la page
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
 
     function changeBackgroundMusic(sectionId) {
         const audioElement = document.getElementById("background-audio");
@@ -64,7 +66,9 @@
             height: 100%;
             min-height:100vh;
         }
-        h1{
+        h1,
+        h3
+        {
             font-family: "Boldonse", system-ui;
             font-weight: 400;
             font-style: normal;
@@ -76,34 +80,40 @@
     <audio id="background-audio" loop></audio>
 
 <div class="wrapper">
-    <div class="container text-center bg-gray-900">
-        <div class="main-section" id="chemin_10">
+    <div class="container text-center bg-gray-95à">
+        <div class="main-section relative" id="chemin_10">
+            <!-- Lien "Page Credits" en haut à droite -->
+            <a href="credit.html"
+               class="absolute top-0 right-0 m-4 px-6 py-2 rounded-lg bg-gradient-to-b from-gray-700 to-gray-800
+               text-white font-semibold text-lg shadow-lg hover:from-gray-600 hover:to-gray-700/90
+               transition-all duration-300 active:scale-95 border border-gray-800">
+                Page Credits
+            </a>
 
-            <h1 class="text-white text-5xl mb-5">The Switch</h1>
-            <div><img src="images/img1.jpg" alt=""></div>
+            <!-- Titre -->
+            <h1 class="text-white text-3xl sm:text-4xl md:text-5xl lg:text-6xl mb-5">
+                The Switch
+            </h1>
 
+            <!-- Image -->
+            <img class="rotate-45" src="src/image/logo.jpg" alt="">
 
-            <button onclick="switchSection('chemin_0')"
-                    class="px-8 py-3 mt-10 rounded-lg bg-gradient-to-b from-gray-700 to-gray-800 text-white font-semibold text-lg shadow-lg hover:from-gray-600 hover:to-gray-700/90 transition-all duration-300 active:scale-95 border border-gray-800">
-                Commencer
-            </button>
-
+            <!-- Bouton "Commencer" en bas -->
+            <div class="mt-10">
+                <button onclick="switchSection('chemin_0')"
+                        class="px-8 py-3 rounded-lg bg-gradient-to-b from-gray-700 to-gray-800
+                   text-white font-semibold text-lg shadow-lg hover:from-gray-600 hover:to-gray-700/90
+                   transition-all duration-300 active:scale-95 border border-gray-800">
+                    Commencer
+                </button>
+            </div>
         </div>
 
-        <div id="chemin_0" class="main-section hidden mt-8">
-            <p class="w-[100%] relative bottom-55 p-4 bg-zinc-800/80 text-white rounded-lg mt-4 mb-4 text-lg font-semibold">Un match de football.</p>
-            <div class="flex flex-col items-center">
-                <img class="rotate-180 w-[100%]" src="images/dribble.jpg" alt="">
-                <p class="w-[100%] relative bottom-55 p-4 bg-zinc-800/80 text-white rounded-lg mt-4 mb-4 text-lg font-semibold">Le joueur star du moment accélère sur le côté du terrain.</p>
-            </div>
-            <div class="flex flex-col items-center">
-                <img class="rotate-180 w-[80%]" src="images/choc_entre_les_deux.png" alt="">
-                <p class="w-[100%] relative bottom-55 p-4 bg-zinc-800/80 text-white rounded-lg mt-4 mb-4 text-lg font-semibold">Il percute en fan en tribune. Choc entre deux.</p>
-            </div>
-            <div class="flex flex-col items-center">
-                <p class="w-[100%] p-4 bg-red-400 text-white rounded-lg mt-4 mb-4 text-lg font-semibold">Le lendemain, ils se réveillent dans le corps de l'autre.</p>
-            </div>
 
+
+        <div id="chemin_0" class="main-section hidden mt-8">
+            <img src="src/image/img6.png" alt="">
+            <img src="src/image/img2.png" alt="">
 
             <div class="bg-zinc-900/80 border border-zinc-600 rounded-lg mt-6 mb-6 p-6 text-lg flex flex-col items-center shadow-xl backdrop-blur-lg">
                 <h1 class="pb-4 text-xl font-bold text-gray-100 tracking-wide uppercase">Quel personnage veux-tu suivre ?</h1>
@@ -120,15 +130,10 @@
             </div>
         </div>
         <!-- Chemin du fan -->
-            <div id="chemin_1_1" class="main-section hidden mt-8">
-                <div class="flex flex-col items-center">
-                    <img class="-rotate-45 w-[50%]" src="images/il_se_regarde_dans_le_miroir_il_est_choque_1_1.png" alt="">
-                    <p class="w-[100%] relative bottom-50 p-4 bg-zinc-800/80 text-white rounded-lg mt-4 mb-4 text-lg font-semibold">Il se réveille dans une maison. Il se regarde dans le miroir et est choqué. Il n'est pas dans son corps !</p>
-                </div>
-                <div class="flex flex-col items-center mt-20">
-                    <img class="-rotate-45 w-[50%]" src="images/il_va_a_lentrainement_1_1.png" alt="">
-                    <p class="w-[100%] relative bottom-50 p-4 bg-zinc-800/80 text-white rounded-lg mt-4 mb-4 text-lg font-semibold">Il doit aller à l’entraînement.</p>
-                </div>
+            <div id="chemin_1_1" class="main-section hidden mt-4">
+                <img src="src/image/img16.png" alt="">
+                <img src="src/image/img1.png" alt="">
+                <img src="src/image/img15.png" alt="">
                 <div class="bg-zinc-900/80 border border-zinc-600 rounded-lg mt-6 mb-6 p-6 text-lg flex flex-col items-center shadow-xl backdrop-blur-lg">
                     <h1 class="pb-4 text-xl font-bold text-gray-100 tracking-wide uppercase">Les paparazis l’abordent et il est submergé par les médias. Que veux-tu faire ?</h1>
                     <div class="flex gap-4">
@@ -147,31 +152,12 @@
         </div>
 
         <div id="chemin_1_1_3" class="main-section hidden mt-8">
-            <div class="flex flex-col items-center">
-                <img class="rotate-90 w-[50%] " src="images/malgre_le_changement_de_corps_le_fan_se_sent_confiant_dans_la_peau_de_lathlete_1_1_3.jpg" alt="">
-                <p class="w-[100%] p-4 bg-zinc-800/80 text-white rounded-lg mt-4 mb-4 text-lg font-semibold">Malgré le changement de corps, le fan se sent confiant dans la peau de l’athlète.</p>
-            </div>
-            <div class="flex flex-col items-center">
-                <p class="w-[100%] p-4 bg-red-400 text-white rounded-lg mt-4 mb-4 text-lg font-semibold">Il fait un match catastrophique. Il coûte la victoire à son équipe.</p>
-            </div>
-            <div class="flex flex-col items-center">
-                <p class="w-[100%] p-4 bg-red-400 text-white rounded-lg mt-4 mb-4 text-lg font-semibold">Déterminé, il travaille dur et n'abandonne pas.</p>
-            </div>
-            <div class="flex flex-col items-center">
-                <p class="w-[100%] p-4 bg-red-400 text-white rounded-lg mt-4 mb-4 text-lg font-semibold">Match France - Italie. Une ambiance électrique.</p>
-            </div>
-            <div class="flex flex-col items-center">
-                <img class="-rotate-45 w-[71%]" src="images/img4.jpg" alt="">
-                <p class="w-[100%] relative bottom-72 p-4 bg-zinc-800/80 text-white rounded-lg mt-4 mb-4 text-lg font-semibold">Ils se regardent dans le tunnel des vestiaires… Un doute…</p>
-            </div>
-            <div class="flex flex-col items-center">
-                <img class=" w-[100%] " src="images/choc-entre-les-deux-1_1_3.jpg" alt="">
-                <p class="w-[100%] p-4 bg-zinc-800/80 text-white rounded-lg mt-4 mb-4 text-lg font-semibold">Match très serré, le ballon est entre les deux joueurs, choc !</p>
-            </div>
-            <div class="flex flex-col items-center">
-                <img class="rotate-90 w-[80%] " src="images/ils_se_relevent_dans_le_corps_1_1_3.jpg" alt="">
-                <p class="w-[100%] p-4 bg-zinc-800/80 text-white rounded-lg mt-4 mb-4 text-lg font-semibold">Ils se relèvent… De retour dans leur corps.</p>
-            </div>
+            <img src="src/image/img4.png" alt="">
+            <img src="src/image/img7.png" alt="">
+            <img src="src/image/img14.png" alt="">
+            <img src="src/image/img9.png" alt="">
+           <img src="src/image/img3.png" alt="">
+           <img src="src/image/img8.png" alt="">
             <div>
                 <h3 class="text-red-500 text-8xl font-bold">FIN</h3>
             </div>
@@ -182,8 +168,6 @@
         </div>
 
         <div id="chemin_1_1_2" class="main-section hidden mt-8">
-            <p class="p-4 bg-zinc-800/80 text-white rounded-lg mt-4 mb-4 text-lg font-semibold">Il ne supporte pas la pression, il veut tout abandonner. </p>
-
             <div class="bg-zinc-900/80 border border-zinc-600 rounded-lg mt-6 mb-6 p-6 text-lg flex flex-col items-center shadow-xl backdrop-blur-lg">
                 <h1 class="pb-4 text-xl font-bold text-gray-100 tracking-wide uppercase">Est-ce la bonne décision ?</h1>
                 <div class="flex gap-4">
@@ -202,29 +186,13 @@
         </div>
 
         <div id="chemin_1_1_5" class="main-section hidden mt-8">
+           <img src="src/image/img13.jpg" alt="">
+           <img src="src/image/img14.png" alt="">
+            <img src="src/image/img9.png" alt="">
+            <img src="src/image/img11.png" alt="">
+            <img src="src/image/img5.png" alt="">
             <div>
-                <img class="w-[100%]" src="images/img7.jpg" alt="">
-                <p class="w-[100%] relative bottom-32 p-4 bg-zinc-800/80 text-white rounded-lg mt-4 mb-4 text-lg font-semibold">Il ne veut plus s'entrainer.</p>
-            </div>
-            <div>
-
-                <p class="w-[100% p-4 bg-red-400 text-white rounded-lg mt-4 mb-4 text-lg font-semibold">Match France - Italie. Il retrouve le professionnel qui est dans sa peau.</p>
-            </div>
-
-            <div>
-                <img class="-rotate-45 w-[71%] ml-[179px]" src="images/img4.jpg" alt="">
-                <p class="relative bottom-72 p-4 bg-zinc-800/80 text-white rounded-lg mt-4 mb-4 text-lg font-semibold">Ils se regardent dans le tunnel des vestiaires… Un doute…</p>
-            </div>
-            <div>
-                <img class=" w-[100%] " src="images/img6.jpg" alt="">
-                <p class=" relative bottom-32 p-4 bg-zinc-800/80 text-white rounded-lg mt-4 mb-4 text-lg font-semibold">Le fan dans la peau de l’athlète perd le match. Il a été catastrophique</p>
-            </div>
-            <div>
-                <img class=" w-[100%] " src="images/img9.jpg" alt="">
-                <p class="relative bottom-32 p-4 bg-zinc-800/80 text-white rounded-lg mt-4 mb-4 text-lg font-semibold">L’athlète dans la peau du fan devient une star mondiale.</p>
-            </div>
-            <div>
-                <h3 class="text-red-500 text-8xl font-bold">FIN</h3>
+                <h3 class="text-red-500 text-8xl mt-8 font-bold">FIN</h3>
             </div>
             <button onclick="switchSection('chemin_10')"
                     class="px-8 py-3 mt-10 rounded-lg bg-gradient-to-b from-gray-700 to-gray-800 text-white font-semibold text-lg shadow-lg hover:from-gray-600 hover:to-gray-700/90 transition-all duration-300 active:scale-95 border border-gray-800">
@@ -236,10 +204,11 @@
 
         <!-- Chemin du footballeur -->
         <div id="chemin_1_2" class="main-section hidden mt-8">
-            <p class="p-4 bg-zinc-800/80 text-white rounded-lg mt-4 mb-4 text-lg font-semibold">Il se réveille dans une petite chambre. Il se regarde dans le miroir et crie.</p>
-            <p class="p-4 bg-zinc-800/80 text-white rounded-lg mt-4 mb-4 text-lg font-semibold">Il doit aller à l’entraînement.</p>
-            <p class="p-4 bg-zinc-800/80 text-white rounded-lg mt-4 mb-4 text-lg font-semibold">Il impressionne tout le monde par son talent.</p>
-            <p class="p-4 bg-zinc-800/80 text-white rounded-lg mt-4 mb-4 text-lg font-semibold">Il grimpe les échelons mais se rend compte de la difficulté.</p>
+            <img src="src/image/img16.png" alt="">
+            <img src="src/image/img1.png" alt="">
+            <img src="src/image/img15.png" alt="">
+            <img src="src/image/img6.png" alt="">
+            <img src="src/image/img20.png" alt="">
             <div class="bg-zinc-900/80 border border-zinc-600 rounded-lg mt-6 mb-6 p-6 text-lg flex flex-col items-center shadow-xl backdrop-blur-lg">
                 <h1 class="pb-4 text-xl font-bold text-gray-100 tracking-wide uppercase">Doit-il quitter sa famille ?</h1>
                 <div class="flex gap-4">
@@ -258,12 +227,9 @@
         </div>
 
         <div id="chemin_1_2_3" class="main-section hidden mt-8">
-            <p class="p-4 bg-zinc-800/80 text-white rounded-lg mt-4 mb-4 text-lg font-semibold">Il décide d’essayer de s’entendre avec eux. Leur support l’aide à surmonter les épreuves. Il devient plus fort et est sélectionné en équipe nationale</p>
-            <p class="p-4 bg-zinc-800/80 text-white rounded-lg mt-4 mb-4 text-lg font-semibold">Match France - Italie. Une ambiance électrique.</p>
-            <div>
-                <img class="-rotate-45 w-[71%] ml-[179px]" src="images/img4.jpg" alt="">
-                <p class=" relative bottom-72 p-4 bg-zinc-800/80 text-white rounded-lg mt-4 mb-4 text-lg font-semibold">Ils se regardent dans le tunnel des vestiaires… Un doute…</p>
-            </div>
+            <img src="src/image/img15.png" alt="">
+            <img src="src/image/img14.png" alt="">
+            <img src="src/image/img9.png" alt="">
             <div class="bg-zinc-900/80 border border-zinc-600 rounded-lg mt-6 mb-6 p-6 text-lg flex flex-col items-center shadow-xl backdrop-blur-lg">
                 <h1 class="pb-4 text-xl font-bold text-gray-100 tracking-wide uppercase">Que doit-il faire sur le terrain ?</h1>
                 <div class="flex gap-4">
@@ -282,22 +248,29 @@
         </div>
 
         <div id="chemin_1_2_7" class="main-section hidden mt-8">
-            <p class="p-4 bg-zinc-800/80 text-white rounded-lg mt-4 mb-4 text-lg font-semibold">Choc entre les deux</p>
-            <p class="p-4 bg-zinc-800/80 text-white rounded-lg mt-4 mb-4 text-lg font-semibold">Il se relève... De retour dans son corps.</p>
+           <img src="src/image/img3.png" alt="">
+           <img src="src/image/img19.png" alt="">
+            <div>
+                <h3 class="text-red-500 text-8xl mt-8 font-bold">FIN</h3>
+            </div>
+            <button onclick="switchSection('chemin_10')"
+                    class="px-8 py-3 mt-10 rounded-lg bg-gradient-to-b from-gray-700 to-gray-800 text-white font-semibold text-lg shadow-lg hover:from-gray-600 hover:to-gray-700/90 transition-all duration-300 active:scale-95 border border-gray-800">
+                Recommencer
+            </button>
         </div>
         <div id="chemin_1_2_8" class="main-section hidden mt-8">
+            <img src="src/image/img12.png" alt="">
             <div>
-                <p class="p-4 bg-zinc-800/80 text-white rounded-lg mb-4 text-lg">Ils ne réechangent pas de corps au final et restent rivaux</p>
-                <img class=" w-[100%]" src="images/img8.jpg" alt="">
-                <p class="p-4 bg-zinc-800/80 text-white rounded-lg mt-4  text-lg">Cette expérience leur permet de se challenger mutuellement tout au long de leur carrière et de se tirer mutuellement vers le haut en s’affrontant continuellement au sommet.</p>
+                <h3 class="text-red-500 text-8xl mt-8 font-bold">FIN</h3>
             </div>
+            <button onclick="switchSection('chemin_10')"
+                    class="px-8 py-3 mt-10 rounded-lg bg-gradient-to-b from-gray-700 to-gray-800 text-white font-semibold text-lg shadow-lg hover:from-gray-600 hover:to-gray-700/90 transition-all duration-300 active:scale-95 border border-gray-800">
+                Recommencer
+            </button>
         </div>
 
         <div id="chemin_1_2_2" class="main-section hidden mt-8">
-            <div>
-                <p class="relative top-24 p-4 bg-zinc-800/80 text-white rounded-lg mt-4 mb-4 text-lg font-semibold">Il décide de partir seul</p>
-                <img class=" w-[100%] " src="images/img5.jpg" alt="">
-                </div>
+            <img src="src/image/img18.png" alt="">
             <div class="bg-zinc-900/80 border border-zinc-600 rounded-lg mt-6 mb-6 p-6 text-lg flex flex-col items-center shadow-xl backdrop-blur-lg">
                 <h1 class="pb-4 text-xl font-bold text-gray-100 tracking-wide uppercase">Quelle voie choisira-t-il ?</h1>
                 <div class="flex gap-4">
@@ -316,15 +289,15 @@
         </div>
 
         <div id="chemin_1_2_5" class="main-section hidden mt-[-150px]">
+           <img src="src/image/img17.png" alt="">
+            <img src="src/image/img10.png" alt="">
             <div>
-                <img class="-rotate-45 w-[70%] ml-[180px]" src="images/img3.jpg" alt="">
-                <p class="p-4 bg-zinc-800/80 text-white -mt-[100px] rounded-lg text-lg">Malgré son travail acharné il n'est pas seléctionné en equipe national</p>
-
+                <h3 class="text-red-500 text-8xl mt-8 font-bold">FIN</h3>
             </div>
-            <div>
-                <img class="-rotate-45 w-[70%] ml-[180px]" src="images/img2.jpg" alt="">
-                <p class="p-4 bg-zinc-800/80 text-white rounded-lg -mt-[100px] text-lg" >Il échoue dans sa carrière, enchaine les blessures. Il arrete le football et a fini à la rue.</p>
-            </div>
+            <button onclick="switchSection('chemin_10')"
+                    class="px-8 py-3 mt-10 rounded-lg bg-gradient-to-b from-gray-700 to-gray-800 text-white font-semibold text-lg shadow-lg hover:from-gray-600 hover:to-gray-700/90 transition-all duration-300 active:scale-95 border border-gray-800">
+                Recommencer
+            </button>
         </div>
     </div>
 </div>
