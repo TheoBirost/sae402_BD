@@ -4,9 +4,9 @@
 
 - **Théo** : Participation au développement front, créateur de l'interactivité avec JavaScript et gestion du projet et auteur du scénario. [Profil GitHub](https://github.com/TheoBirost)
 - **Loann** : Participation au développement front, aide au dessin et auteur du scénario. [Profil GitHub](https://github.com/Loanngerme)
-- **Lenny** : Participation au développement front, aide au dessins auteur du scénario. [Profil GitHub]([https://github.com/bob-writer](https://github.com/DraayZe))
-- **Ewen** : Participation au développement front, mise en prod des sons et auteur du scénario. [Profil GitHub]([https://github.com/claire-dev](https://github.com/ewenlogiciel))
-- **Florent** : Participation au 3/4 des dessinis et auteur du scénario. [Profil GitHub]([https://github.com/claire-dev](https://github.com/Lewis3306))
+- **Lenny** : Participation au développement front, aide au dessins auteur du scénario. [Profil GitHub]([https://github.com/bob-writer](https://github.com/DraayZe)
+- **Ewen** : Participation au développement front, mise en prod des sons et auteur du scénario. [Profil GitHub]([https://github.com/claire-dev](https://github.com/ewenlogiciel)
+- **Florent** : Participation au 3/4 des dessinis et auteur du scénario. [Profil GitHub]([https://github.com/claire-dev](https://github.com/Lewis3306)
 
 
 ## Description du Projet
